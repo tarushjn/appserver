@@ -26,10 +26,8 @@ public class ImageController {
 
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Image>> getAll(@RequestParam(value = "offset", defaultValue = "0") int offset,
-                                             @RequestParam(value = "count", defaultValue = "10") int count) {
-        LOG.info("getting all images with offset: {}, and count: {}", offset, count);
-        List<Image> images = imageService.getAll(offset, count);
+    public ResponseEntity<List<Image>> getAll() {
+       List<Image> images = imageService.getAll();
 
         if (images == null || images.isEmpty()){
             LOG.info("no images found");

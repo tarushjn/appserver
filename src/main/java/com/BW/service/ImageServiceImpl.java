@@ -20,7 +20,7 @@ public class ImageServiceImpl implements ImageService {
                     new Image(counter.incrementAndGet(), "www.bw.com")));
 
     @Override
-    public List<Image> getAll(int offset, int count) {
+    public List<Image> getAll() {
         return images;
     }
 

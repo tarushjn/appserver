@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ImageService {
 
-    List<Image> getAll(int offset, int count);
+    List<Image> getAll();
 
     Image findById(int id);
 
