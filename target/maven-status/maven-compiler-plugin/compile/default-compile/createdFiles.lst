@@ -1,0 +1,8 @@
+com\BW\model\Image.class
+com\BW\service\ImageServiceImpl.class
+com\BW\config\WebConfig.class
+com\BW\controller\ImageController.class
+com\BW\utility\DBUtility.class
+com\BW\config\ServletInitializer.class
+com\BW\filter\CORSFilter.class
+com\BW\service\ImageService.class
