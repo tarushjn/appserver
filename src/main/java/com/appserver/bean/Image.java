@@ -1,4 +1,4 @@
-package com.webservice.bean;
+package com.appserver.bean;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

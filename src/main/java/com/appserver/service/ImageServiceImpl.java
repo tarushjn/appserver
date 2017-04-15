@@ -1,11 +1,11 @@
-package com.webservice.service;
+package com.appserver.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.webservice.bean.Image;
-import com.webservice.dao.ImageDao;
+import com.appserver.bean.Image;
+import com.appserver.dao.ImageDao;
 
 /**
  * Created by Saurabh on 15-04-2017.

@@ -1,4 +1,4 @@
-package com.webservice.controller;
+package com.appserver.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import com.webservice.bean.Image;
-import com.webservice.service.ImageService;
+import com.appserver.bean.Image;
+import com.appserver.service.ImageService;
 
 /**
  * Created by Saurabh on 15-04-2017.

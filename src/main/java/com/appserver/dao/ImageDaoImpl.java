@@ -1,4 +1,4 @@
-package com.webservice.dao;
+package com.appserver.dao;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.webservice.bean.Image;
+import com.appserver.bean.Image;
 
 /**
  * Created by Saurabh on 15-04-2017.
