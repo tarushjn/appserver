@@ -1,8 +1,6 @@
-D:\appserver\src\main\java\com\BW\service\ImageService.java
-D:\appserver\src\main\java\com\BW\service\ImageServiceImpl.java
-D:\appserver\src\main\java\com\BW\controller\ImageController.java
-D:\appserver\src\main\java\com\BW\filter\CORSFilter.java
-D:\appserver\src\main\java\com\BW\utility\DBUtility.java
-D:\appserver\src\main\java\com\BW\config\WebConfig.java
-D:\appserver\src\main\java\com\BW\config\ServletInitializer.java
-D:\appserver\src\main\java\com\BW\model\Image.java
+D:\webservice\src\main\java\com\webservice\bean\Image.java
+D:\webservice\src\main\java\com\webservice\dao\ImageDao.java
+D:\webservice\src\main\java\com\webservice\service\ImageServiceImpl.java
+D:\webservice\src\main\java\com\webservice\service\ImageService.java
+D:\webservice\src\main\java\com\webservice\dao\ImageDaoImpl.java
+D:\webservice\src\main\java\com\webservice\controller\ImageController.java

@@ -1,8 +1,6 @@
-com\BW\model\Image.class
-com\BW\service\ImageServiceImpl.class
-com\BW\config\WebConfig.class
-com\BW\controller\ImageController.class
-com\BW\utility\DBUtility.class
-com\BW\config\ServletInitializer.class
-com\BW\filter\CORSFilter.class
-com\BW\service\ImageService.class
+com\webservice\dao\ImageDao.class
+com\webservice\controller\ImageController.class
+com\webservice\bean\Image.class
+com\webservice\service\ImageService.class
+com\webservice\service\ImageServiceImpl.class
+com\webservice\dao\ImageDaoImpl.class
