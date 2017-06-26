@@ -1,17 +1,16 @@
 package com.jwt.controller;
 import java.util.List;
 
+import com.amazonaws.services.s3.model.PutObjectResult;
+import com.jwt.service.S3Wrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.jwt.bean.Image;
 import com.jwt.service.ImageService;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Created by Saurabh on 15-04-2017.
@@ -21,6 +20,9 @@ public class ImageController {
 
 	@Autowired
 	private ImageService imageService;
+
+	@Autowired
+	private S3Wrapper s3Wrapper;
 
 	@RequestMapping(value = "/image", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<List<Image>> images() {
@@ -79,6 +81,11 @@ public class ImageController {
 		imageService.updateImage(image);
 		headers.add("Image Updated  - ", String.valueOf(imageId));
 		return new ResponseEntity<Image>(image, headers, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/upload", method = RequestMethod.POST)
+	public List<PutObjectResult> upload(@RequestParam("file") MultipartFile[] multipartFiles) {
+		return s3Wrapper.upload(multipartFiles);
 	}
 
 }

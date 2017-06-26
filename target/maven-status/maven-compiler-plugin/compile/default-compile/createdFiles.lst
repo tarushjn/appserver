@@ -4,3 +4,5 @@ com/jwt/bean/Image.class
 com/jwt/service/ImageServiceImpl.class
 com/jwt/service/ImageService.class
 com/jwt/controller/ImageController.class
+com/jwt/service/S3Wrapper.class
+com/jwt/dao/AWSConfiguration.class
