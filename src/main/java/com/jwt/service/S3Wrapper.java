@@ -81,6 +81,21 @@ public class S3Wrapper {
 
 		return new ResponseEntity<>(bytes, httpHeaders, HttpStatus.OK);
 	}
+	public String saveS3Url(String key) throws IOException {
+		GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, key);
+
+		S3Object s3Object = amazonS3Client.getObject(getObjectRequest);
+
+		S3ObjectInputStream objectInputStream = s3Object.getObjectContent();
+
+		byte[] bytes = IOUtils.toByteArray(objectInputStream);
+
+		String fileName = URLEncoder.encode(key, "UTF-8").replaceAll("\\+", "%20");
+		String s3url = "https://s3.ap-south-1.amazonaws.com/b-vision/";
+
+
+		return fileName+s3url;
+	}
 
 	public List<S3ObjectSummary> list() {
 		ObjectListing objectListing = amazonS3Client.listObjects(new ListObjectsRequest().withBucketName(bucket));
