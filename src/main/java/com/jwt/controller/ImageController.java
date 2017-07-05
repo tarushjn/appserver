@@ -1,4 +1,5 @@
 package com.jwt.controller;
+import java.io.File;
 import java.util.List;
 
 import com.amazonaws.services.s3.model.PutObjectResult;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import com.jwt.bean.Image;
 import com.jwt.service.ImageService;
 import org.springframework.web.multipart.MultipartFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by Saurabh on 15-04-2017.
@@ -23,6 +26,8 @@ public class ImageController {
 
 	@Autowired
 	private S3Wrapper s3Wrapper;
+	Logger logger = LoggerFactory.getLogger("print file name =============");
+
 
 	@RequestMapping(value = "/image", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<List<Image>> images() {
@@ -85,6 +90,11 @@ public class ImageController {
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public List<PutObjectResult> upload(@RequestParam("file") MultipartFile[] multipartFiles) {
+		for(MultipartFile value : multipartFiles) {
+			System.out.println("https://s3.ap-south-1.amazonaws.com/b-vision/"+value.getOriginalFilename());
+
+		}
+
 		return s3Wrapper.upload(multipartFiles);
 	}
 
