@@ -34,7 +34,9 @@ public class ImageServiceImpl implements ImageService {
 	public int createImage(Image image) {
 		return imageDao.createImage(image);
 	}
-
+public String saveImage(Image image){
+		return imageDao.saveImage(image);
+}
 
 }
 

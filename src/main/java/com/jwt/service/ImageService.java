@@ -10,4 +10,5 @@ public interface ImageService {
 	public int deleteImage(Long imageId);
 	public int updateImage(Image image);
 	public int createImage(Image image);
+	public String saveImage(Image image);
 }

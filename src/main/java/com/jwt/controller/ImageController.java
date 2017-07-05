@@ -26,7 +26,6 @@ public class ImageController {
 
 	@Autowired
 	private S3Wrapper s3Wrapper;
-	Logger logger = LoggerFactory.getLogger("print file name =============");
 
 
 	@RequestMapping(value = "/image", method = RequestMethod.GET, produces = "application/json")
@@ -91,9 +90,11 @@ public class ImageController {
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public List<PutObjectResult> upload(@RequestParam("file") MultipartFile[] multipartFiles) {
 		for(MultipartFile value : multipartFiles) {
-			System.out.println("https://s3.ap-south-1.amazonaws.com/b-vision/"+value.getOriginalFilename());
+			String filename = "https://s3.ap-south-1.amazonaws.com/b-vision/"+value.getOriginalFilename();
+			imageService.saveImage(filename);
 
 		}
+
 
 		return s3Wrapper.upload(multipartFiles);
 	}
