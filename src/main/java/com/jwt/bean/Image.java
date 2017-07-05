@@ -23,21 +23,11 @@ public class Image {
 		this.age = age;
 	}
 
-	public Image() {
+	public Long getImageId() {return imageId;}
 
-	}
+	public void setImageId(Long imageId) {this.imageId = imageId;}
 
-	public Long getImageId() {
-		return imageId;
-	}
-
-	public void setImageId(Long imageId) {
-		this.imageId = imageId;
-	}
-
-	public String getImageUrl() {
-		return imageUrl;
-	}
+	public String getImageUrl() {return imageUrl;}
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;

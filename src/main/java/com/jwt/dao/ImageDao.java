@@ -9,4 +9,5 @@ public interface ImageDao {
 	public int deleteImage(Long imageId);
 	public int updateImage(Image image);
 	public int createImage(Image image);
+	public String saveImageUrl(Image image);
 }
