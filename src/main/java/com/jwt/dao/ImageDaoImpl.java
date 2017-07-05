@@ -62,4 +62,11 @@ public class ImageDaoImpl  implements ImageDao {
 						image.getImageId(), image.getFaces(), image.getImageUrl(),  image.getAge() });
 		return count;
 	}
+
+	public String saveUrl(Image image){
+		String count = jdbcTemplate.update("INSERT  INTO image_details (image_URL) VALUES (?)", new Object[]{
+				image.getImageUrl()
+		});
+		return count;
+	}
 }

@@ -24,6 +24,8 @@ public class ImageController {
 	@Autowired
 	private S3Wrapper s3Wrapper;
 
+
+
 	@RequestMapping(value = "/image", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<List<Image>> images() {
 
@@ -85,6 +87,7 @@ public class ImageController {
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public List<PutObjectResult> upload(@RequestParam("file") MultipartFile[] multipartFiles) {
+		S3Wrapper.saveS3Url();
 		return s3Wrapper.upload(multipartFiles);
 	}
 

@@ -10,9 +10,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Image {
 	private Long imageId;
-	private String imageUrl;
+	public String imageUrl;
 	private String faces;
 	private Long age;
+
 
 	@JsonCreator
 	public Image(@JsonProperty("imageId") Long imageId, @JsonProperty("imageUrl") String imageUrl,
