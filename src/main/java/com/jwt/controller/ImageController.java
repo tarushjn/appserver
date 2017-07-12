@@ -2,6 +2,7 @@ package com.jwt.controller;
 import java.io.IOException;
 import java.util.List;
 
+import com.amazonaws.Response;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.jwt.service.S3Wrapper;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import com.jwt.bean.Image;
 import com.jwt.service.ImageService;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver;
 
 /**
  * Created by Saurabh on 15-04-2017.
@@ -86,10 +88,17 @@ public class ImageController {
 	}
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
+	@ResponseBody
 	public List<PutObjectResult> upload(@RequestParam("file") MultipartFile[] multipartFiles) {
-		return s3Wrapper.upload(multipartFiles);
-	}
 
+		if(multipartFiles == null){
+			new ResponseEntity<>("File is missing", HttpStatus.OK);
+		}else {
+			return s3Wrapper.upload(multipartFiles);
+			new ResponseEntity<>("File uploaded successfully", HttpStatus.OK);
+
+		}
+	}
 	@RequestMapping(value = "/download",
 			method = RequestMethod.GET)
 	public ResponseEntity<byte[]> download(@RequestParam String key) throws IOException {
@@ -100,5 +109,7 @@ public class ImageController {
 	public List<S3ObjectSummary> list() throws IOException {
 		return s3Wrapper.list();
 	}
+
+}
 
 }
