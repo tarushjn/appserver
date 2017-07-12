@@ -23,20 +23,15 @@ public class ImageServiceImpl implements ImageService {
 		return image;
 	}
 
-	public int deleteImage(Long imageId) {
-		return imageDao.deleteImage(imageId);
-	}
+	public int deleteImage(Long imageId) {return imageDao.deleteImage(imageId); }
 
 	public int updateImage(Image image) {
 		return imageDao.updateImage(image);
 	}
 
-	public int createImage(Image image) {
-		return imageDao.createImage(image);
-	}
-public String saveImage(Image image){
-		return imageDao.saveImage(image);
-}
+	public int createImage(Image image) {return imageDao.createImage(image); }
+
+	public String saveImage(Image image){ return imageDao.saveImage(image); }
 
 }
 

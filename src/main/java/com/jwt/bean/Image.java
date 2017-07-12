@@ -29,9 +29,7 @@ public class Image {
 
 	public String getImageUrl() {return imageUrl;}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
+	public void setImageUrl(String imageUrl) {this.imageUrl = imageUrl;}
 
 	public String getFaces() {
 		return faces;

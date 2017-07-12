@@ -4,10 +4,10 @@ import java.util.List;
 import com.jwt.bean.Image;
 
 public interface ImageDao {
-	public List<Image> getImages();
-	public Image getImage(Long imageId);
-	public int deleteImage(Long imageId);
-	public int updateImage(Image image);
-	public int createImage(Image image);
-	public String saveImage(Image image);
+	 List<Image> getImages();
+	Image getImage(Long imageId);
+	int deleteImage(Long imageId);
+	 int updateImage(Image image);
+	 int createImage(Image image);
+	 String saveImage(Image image);
 }
