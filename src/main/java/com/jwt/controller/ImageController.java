@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import com.jwt.bean.Image;
 import com.jwt.service.ImageService;
@@ -27,6 +28,13 @@ public class ImageController {
 
 	@Autowired
 	private S3Wrapper s3Wrapper;
+
+	@RequestMapping(value="/")
+	public class HomeController {
+	public String index() {
+		return "index";
+		}
+	}
 
 	@RequestMapping(value = "/image", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<List<Image>> images() {
@@ -90,17 +98,10 @@ public class ImageController {
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@ResponseBody
 	public List<PutObjectResult> upload(@RequestParam("file") MultipartFile[] multipartFiles) {
-
-		if(multipartFiles == null){
-			new ResponseEntity<>("File is missing", HttpStatus.OK);
-		}else {
-			return s3Wrapper.upload(multipartFiles);
-			new ResponseEntity<>("File uploaded successfully", HttpStatus.OK);
-
+		return s3Wrapper.upload(multipartFiles);
 		}
-	}
-	@RequestMapping(value = "/download",
-			method = RequestMethod.GET)
+
+	@RequestMapping(value = "/download", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> download(@RequestParam String key) throws IOException {
 		return s3Wrapper.download(key);
 	}
@@ -112,4 +113,3 @@ public class ImageController {
 
 }
 
-}
