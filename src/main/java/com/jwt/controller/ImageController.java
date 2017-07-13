@@ -29,8 +29,9 @@ public class ImageController {
 	@Autowired
 	private S3Wrapper s3Wrapper;
 
-	@RequestMapping(value="/")
-	public class HomeController {
+
+	@Controller
+	public class HomeController {@RequestMapping(value="/")
 	public String index() {
 		return "index";
 		}
