@@ -97,8 +97,7 @@ public class ImageController {
 	}
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
-	@ResponseBody
-	public List<PutObjectResult> upload(@RequestParam("file") MultipartFile[] multipartFiles) {
+	public  List<PutObjectResult> upload(@RequestParam("file") MultipartFile[] multipartFiles) {
 		return s3Wrapper.upload(multipartFiles);
 		}
 

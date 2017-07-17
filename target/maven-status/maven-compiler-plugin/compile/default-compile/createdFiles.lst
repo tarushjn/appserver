@@ -6,3 +6,4 @@ com/jwt/service/ImageService.class
 com/jwt/controller/ImageController.class
 com/jwt/service/S3Wrapper.class
 com/jwt/dao/AWSConfiguration.class
+com/jwt/controller/ImageController$HomeController.class
